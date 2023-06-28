@@ -1,20 +1,21 @@
-CREATE TABLE v0 ( v1 FLOAT ) ; 
-  INSERT INTO v0 VALUES ( 82 ) , ( ( SELECT 0 FROM v0 AS v2 GROUP BY ( SELECT -128 ) ) ) , ( 15255709.000000 ) , ( 12 ) ; 
-  SELECT v1 = 2147483647 - v1 ^ v1 AS v4 FROM v0 AS v3 , v0 , v0 AS v6 , v0 AS v5 , v0 AS v7 ORDER BY 35 >= ( SELECT VAR_SAMP ( v1 >= 72 ) OVER ( ROWS BETWEEN v1 + -128 * -32768 PRECEDING AND CURRENT ROW ) IS NOT NULL ) ASC ; 
+CREATE TABLE v0 ( v1 INT ) ; 
+  UPDATE v0 SET v1 = ( WITH v0 AS ( SELECT 42039652.000000 ) SELECT STDDEV_POP ( 96 ) OVER ( ORDER BY v1 ) FROM v0 , v0 LIMIT 37 OFFSET 62 ) = 8 ; 
 /*
-[force_exit_all] #0 0x7f3e8b7e500b (gsignal+0xcb)
-[force_exit_all] #1 0x7f3e8b7c4859 (abort+0x12b)
-[force_exit_all] #2 0x4b6857 (_ZN11__sanitizer5AbortEv+0x47)
-[force_exit_all] #3 0x4b4d81 (_ZN11__sanitizer3DieEv+0xc1)
-[force_exit_all] #4 0x49c2c4 (_ZN6__asan19ScopedInErrorReportD2Ev+0x1c4)
-[force_exit_all] #5 0x49de8a (_ZN6__asan18ReportGenericErrorEmmmmbmjb+0x5ba)
-[force_exit_all] #6 0x49e728 (__asan_report_load8+0x28)
-[force_exit_all] #7 0x7f3e8decb833 (GDKanalytical_variance_samp+0xe753)
-[force_exit_all] #8 0x7f3e8c023b87 (do_stddev_and_variance+0x3e7)
-[force_exit_all] #9 0x7f3e8c784482 (runMALsequence+0x1252)
-[force_exit_all] #10 0x7f3e8c78fa0a (DFLOWworker+0x63a)
-[force_exit_all] #11 0x7f3e8d98a52b (THRstarter+0x17b)
-[force_exit_all] #12 0x7f3e8dc19aa3 (thread_starter+0x63)
-[force_exit_all] #13 0x7f3e8bb18609 (start_thread+0xd9)
-[force_exit_all] #14 0x7f3e8b8c1133 (clone+0x43)
+[force_exit_all] #0 0x7fc1a56cfbdc (exp_op+0x9c)
+[force_exit_all] #1 0x7fc1a56d0018 (exp_compare_func+0x88)
+[force_exit_all] #2 0x7fc1a56b01d6 (rel_logical_value_exp+0xfe6)
+[force_exit_all] #3 0x7fc1a56b0257 (rel_value_exp+0x77)
+[force_exit_all] #4 0x7fc1a56c5b14 (update_generate_assignments+0x2c4)
+[force_exit_all] #5 0x7fc1a56c374d (rel_updates+0x183d)
+[force_exit_all] #6 0x7fc1a559cb3f (sql_symbol2relation+0x5f)
+[force_exit_all] #7 0x7fc1a55b4b44 (SQLparser+0x354)
+[force_exit_all] #8 0x7fc1a55b42e7 (SQLengine_+0x567)
+[force_exit_all] #9 0x7fc1a55b2fa1 (SQLengine+0x11)
+[force_exit_all] #10 0x7fc1a5927e2f (runScenario+0x3f)
+[force_exit_all] #11 0x7fc1a5928854 (MSscheduleClient+0x6a4)
+[force_exit_all] #12 0x7fc1a59c651d (doChallenge+0xed)
+[force_exit_all] #13 0x7fc1a60311fb (THRstarter+0xeb)
+[force_exit_all] #14 0x7fc1a609ec67 (thread_starter+0x27)
+[force_exit_all] #15 0x7fc1a5456609 (start_thread+0xd9)
+[force_exit_all] #16 0x7fc1a537b133 (clone+0x43)
 */

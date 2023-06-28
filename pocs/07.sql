@@ -1,23 +1,25 @@
-CREATE TEMP TABLE Table0 (
-    Col0 INT, 
-    PRIMARY KEY(Col0), 
-    FOREIGN KEY (Col0) REFERENCES Table0
-  );
+CREATE VIEW v0 AS SELECT CAST ( NULL AS INT ) EXCEPT SELECT CAST ( NULL AS INT ) GROUP BY NULL ; 
 /*
-[force_exit_all] #0 0x7f0022ffaf9f (sql_trans_copy_key+0x52f)
-[force_exit_all] #1 0x7f0022de9c4b (create_table_or_view+0x13db)
-[force_exit_all] #2 0x7f0022e70da5 (SQLcreate_table+0x2f5)
-[force_exit_all] #3 0x7f00236ec482 (runMALsequence+0x1252)
-[force_exit_all] #4 0x7f00236eacf7 (runMAL+0x107)
-[force_exit_all] #5 0x7f0022e29fc3 (SQLrun+0x1a3)
-[force_exit_all] #6 0x7f0022e2cfaf (SQLengineIntern+0x7f)
-[force_exit_all] #7 0x7f0022e27015 (SQLengine_+0x1585)
-[force_exit_all] #8 0x7f0022e23b03 (SQLengine+0x13)
-[force_exit_all] #9 0x7f0023724fbe (runScenario+0x7e)
-[force_exit_all] #10 0x7f00237265ab (MSscheduleClient+0xd0b)
-[force_exit_all] #11 0x7f00238fc316 (doChallenge+0x206)
-[force_exit_all] #12 0x7f00248f252b (THRstarter+0x17b)
-[force_exit_all] #13 0x7f0024b81aa3 (thread_starter+0x63)
-[force_exit_all] #14 0x7f0022a80609 (start_thread+0xd9)
-[force_exit_all] #15 0x7f0022829133 (clone+0x43)
+[force_exit_all] #0 0x7fbc4f2d3a91 (exp_subtype+0x1)
+[force_exit_all] #1 0x7fbc4f2eb2d8 (rel_set_type+0x208)
+[force_exit_all] #2 0x7fbc4f2e0cb0 (rel_visitor_topdown+0xb0)
+[force_exit_all] #3 0x7fbc4f2e0e49 (rel_visitor_topdown+0x249)
+[force_exit_all] #4 0x7fbc4f2e0e49 (rel_visitor_topdown+0x249)
+[force_exit_all] #5 0x7fbc4f2e0d4c (rel_visitor_topdown+0x14c)
+[force_exit_all] #6 0x7fbc4f2e5dd5 (rel_unnest+0xf5)
+[force_exit_all] #7 0x7fbc4f2a4e20 (sql_processrelation+0x20)
+[force_exit_all] #8 0x7fbc4f1a1893 (create_table_or_view+0x823)
+[force_exit_all] #9 0x7fbc4f1d79ab (SQLcreate_view+0xdb)
+[force_exit_all] #10 0x7fbc4f5194a9 (runMALsequence+0x889)
+[force_exit_all] #11 0x7fbc4f518a60 (runMAL+0x90)
+[force_exit_all] #12 0x7fbc4f1b939c (SQLrun+0xcc)
+[force_exit_all] #13 0x7fbc4f1ba521 (SQLengineIntern+0x41)
+[force_exit_all] #14 0x7fbc4f1b6fa1 (SQLengine+0x11)
+[force_exit_all] #15 0x7fbc4f52be2f (runScenario+0x3f)
+[force_exit_all] #16 0x7fbc4f52c854 (MSscheduleClient+0x6a4)
+[force_exit_all] #17 0x7fbc4f5ca51d (doChallenge+0xed)
+[force_exit_all] #18 0x7fbc4fc351fb (THRstarter+0xeb)
+[force_exit_all] #19 0x7fbc4fca2c67 (thread_starter+0x27)
+[force_exit_all] #20 0x7fbc4f05a609 (start_thread+0xd9)
+[force_exit_all] #21 0x7fbc4ef7f133 (clone+0x43)
 */

@@ -1,17 +1,19 @@
-CREATE TABLE v0 ( v1 INT NULL ) ; 
-  INSERT INTO v0 VALUES ( 3 ) , ( 10 ) , ( 1 ) , ( 200 ) , ( 5 ) ; 
-  INSERT INTO v0 SELECT v0 . v1 FROM v0 , v0 AS c3_null , v0 AS a ; 
-  INSERT INTO v0 SELECT v0 . v1 FROM v0 , v0 AS c3_null , v0 AS col2 ; 
-  SELECT v1 , row_number ( ) OVER ( ORDER BY v1 * 3 NULLS LAST , NULL * 0 DESC NULLS FIRST ) , 3 FROM v0 LIMIT 300000 ; 
+CREATE TABLE v0 ( v1 INT , v2 REAL ) ; 
+  SELECT * FROM v0 ORDER BY ( SELECT * ) ; 
 /*
-[force_exit_all] #0 0x7f1b455f3291 (lngCmp+0x21)
-[force_exit_all] #1 0x7f1b44afa60f (BATselect+0x4ff)
-[force_exit_all] #2 0x7f1b459e53b9 (BATfirstn+0x5dd9)
-[force_exit_all] #3 0x7f1b44667325 (ALGfirstn+0x4e5)
-[force_exit_all] #4 0x7f1b443e6482 (runMALsequence+0x1252)
-[force_exit_all] #5 0x7f1b443f1a0a (DFLOWworker+0x63a)
-[force_exit_all] #6 0x7f1b455ec52b (THRstarter+0x17b)
-[force_exit_all] #7 0x7f1b4587baa3 (thread_starter+0x63)
-[force_exit_all] #8 0x7f1b4377a609 (start_thread+0xd9)
-[force_exit_all] #9 0x7f1b43523133 (clone+0x43)
+[force_exit_all] #0 0x7f94489d6a80 (rel_order_by+0x110)
+[force_exit_all] #1 0x7f94489d8da6 (rel_select_exp+0xad6)
+[force_exit_all] #2 0x7f94489d3fc0 (rel_subquery+0x300)
+[force_exit_all] #3 0x7f94489d40ed (rel_selects+0xbd)
+[force_exit_all] #4 0x7f94488b7b3f (sql_symbol2relation+0x5f)
+[force_exit_all] #5 0x7f94488cfb44 (SQLparser+0x354)
+[force_exit_all] #6 0x7f94488cf2e7 (SQLengine_+0x567)
+[force_exit_all] #7 0x7f94488cdfa1 (SQLengine+0x11)
+[force_exit_all] #8 0x7f9448c42e2f (runScenario+0x3f)
+[force_exit_all] #9 0x7f9448c43854 (MSscheduleClient+0x6a4)
+[force_exit_all] #10 0x7f9448ce151d (doChallenge+0xed)
+[force_exit_all] #11 0x7f944934c1fb (THRstarter+0xeb)
+[force_exit_all] #12 0x7f94493b9c67 (thread_starter+0x27)
+[force_exit_all] #13 0x7f9448771609 (start_thread+0xd9)
+[force_exit_all] #14 0x7f9448696133 (clone+0x43)
 */

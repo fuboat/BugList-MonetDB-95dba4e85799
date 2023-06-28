@@ -1,23 +1,26 @@
-CREATE TABLE v0 ( v1 FLOAT ) ; 
-  INSERT INTO v0 VALUES ( 0 ) , ( 67 ) , ( 127 ) , ( -1 ) , ( NULL ) , ( NULL ) , ( NULL ) , ( NULL ) ; 
-  WITH v0 AS ( SELECT 14 , * FROM v0 ) INSERT INTO v0 SELECT v1 * 0 FROM v0 NATURAL JOIN v0 , v0 , v0 AS v2 , v0 , v0 AS v3 ORDER BY v1 * 0 / 77 ; 
-  SELECT * , 'x' FROM v0 WHERE ( SELECT 39 WHERE ( v1 + -32768 NOT IN ( 14 , 255 ) ) ) * 87 + 2147483647 ; 
+CREATE TABLE IF NOT EXISTS v0 ( v1 INTEGER ) ; 
+  UPDATE v0 AS v9 SET v1 = ( WITH v0 ( v1 ) AS ( SELECT v1 % ( 12 ^ 55 + v1 + 57159072.000000 ) ) SELECT NULL AS v8 WINDOW v7 AS ( PARTITION BY 8 , 95 , 92150085.000000 , 57 ) ORDER BY v1 , v1 DESC NULLS LAST ) ; 
 /*
-[force_exit_all] #0 0x7f1d0112400b (gsignal+0xcb)
-[force_exit_all] #1 0x7f1d01103859 (abort+0x12b)
-[force_exit_all] #2 0x4b6857 (_ZN11__sanitizer5AbortEv+0x47)
-[force_exit_all] #3 0x4b4d81 (_ZN11__sanitizer3DieEv+0xc1)
-[force_exit_all] #4 0x49c2c4 (_ZN6__asan19ScopedInErrorReportD2Ev+0x1c4)
-[force_exit_all] #5 0x49de8a (_ZN6__asan18ReportGenericErrorEmmmmbmjb+0x5ba)
-[force_exit_all] #6 0x49ea8b (__asan_report_store8+0x2b)
-[force_exit_all] #7 0x7f1d0365dcc2 (mergejoin+0x1a982)
-[force_exit_all] #8 0x7f1d03628389 (BATjoin+0x3199)
-[force_exit_all] #9 0x7f1d023486ae (do_join+0x37e)
-[force_exit_all] #10 0x7f1d02343105 (ALGjoin+0x95)
-[force_exit_all] #11 0x7f1d020c566a (runMALsequence+0x343a)
-[force_exit_all] #12 0x7f1d020cea0a (DFLOWworker+0x63a)
-[force_exit_all] #13 0x7f1d032c952b (THRstarter+0x17b)
-[force_exit_all] #14 0x7f1d03558aa3 (thread_starter+0x63)
-[force_exit_all] #15 0x7f1d01457609 (start_thread+0xd9)
-[force_exit_all] #16 0x7f1d01200133 (clone+0x43)
+[force_exit_all] #0 0x7f5d340e5655 (sql_ifthenelse_propagate_statistics+0x25)
+[force_exit_all] #1 0x7f5d340e02f6 (rel_propagate_statistics+0x476)
+[force_exit_all] #2 0x7f5d340cb0bc (exp_visitor+0x9cc)
+[force_exit_all] #3 0x7f5d340ca340 (exps_exp_visitor_bottomup+0x90)
+[force_exit_all] #4 0x7f5d340ddbb9 (rel_get_statistics_+0x89)
+[force_exit_all] #5 0x7f5d340ca06e (rel_visitor_bottomup+0x17e)
+[force_exit_all] #6 0x7f5d340ca007 (rel_visitor_bottomup+0x117)
+[force_exit_all] #7 0x7f5d340ca007 (rel_visitor_bottomup+0x117)
+[force_exit_all] #8 0x7f5d340c9f9e (rel_visitor_bottomup+0xae)
+[force_exit_all] #9 0x7f5d340ddab4 (rel_get_statistics+0x34)
+[force_exit_all] #10 0x7f5d340db8dc (rel_optimizer+0x50c)
+[force_exit_all] #11 0x7f5d33f89be3 (sql_symbol2relation+0x103)
+[force_exit_all] #12 0x7f5d33fa1b44 (SQLparser+0x354)
+[force_exit_all] #13 0x7f5d33fa12e7 (SQLengine_+0x567)
+[force_exit_all] #14 0x7f5d33f9ffa1 (SQLengine+0x11)
+[force_exit_all] #15 0x7f5d34314e2f (runScenario+0x3f)
+[force_exit_all] #16 0x7f5d34315854 (MSscheduleClient+0x6a4)
+[force_exit_all] #17 0x7f5d343b351d (doChallenge+0xed)
+[force_exit_all] #18 0x7f5d34a1e1fb (THRstarter+0xeb)
+[force_exit_all] #19 0x7f5d34a8bc67 (thread_starter+0x27)
+[force_exit_all] #20 0x7f5d33e43609 (start_thread+0xd9)
+[force_exit_all] #21 0x7f5d33d68133 (clone+0x43)
 */

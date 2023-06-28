@@ -1,27 +1,15 @@
-CREATE TABLE v0 ( v2 CHAR(1) , v1 REAL ) ;
- SELECT DISTINCT SUM ( max ( ( SELECT NULL AS v2 GROUP BY v2 ) ) ) OVER( ORDER BY '013' ) FROM v0 ;
+CREATE TABLE v0 ( v1 BIGINT ) ;
+ INSERT INTO v0 SELECT NULLIF ( 74 , RANK ( ) OVER ( ) ) = -32768 FROM COLUMNS , PRIVILEGES AS v0 ;
+ SELECT * FROM v0 ORDER BY ( 60 - v1 ) , v1 , v1 = 74364935.000000 LIMIT 2147483647 ;
 /*
-[force_exit_all] #0 0x7fd24c361a0d (sql_min_max_propagate_statistics+0x7d)
-[force_exit_all] #1 0x7fd24c34e0d7 (rel_propagate_statistics+0xaf7)
-[force_exit_all] #2 0x7fd24c30d8e3 (exp_visitor+0x1273)
-[force_exit_all] #3 0x7fd24c30bc9f (exps_exp_visitor_bottomup+0x18f)
-[force_exit_all] #4 0x7fd24c346fcb (rel_get_statistics_+0x21b)
-[force_exit_all] #5 0x7fd24c30b21d (rel_visitor_bottomup+0x3bd)
-[force_exit_all] #6 0x7fd24c30b05b (rel_visitor_bottomup+0x1fb)
-[force_exit_all] #7 0x7fd24c30b05b (rel_visitor_bottomup+0x1fb)
-[force_exit_all] #8 0x7fd24c30b05b (rel_visitor_bottomup+0x1fb)
-[force_exit_all] #9 0x7fd24c30b05b (rel_visitor_bottomup+0x1fb)
-[force_exit_all] #10 0x7fd24c346bf0 (rel_get_statistics+0x110)
-[force_exit_all] #11 0x7fd24c340632 (rel_optimizer+0xe72)
-[force_exit_all] #12 0x7fd24bf8f854 (sql_symbol2relation+0x2d4)
-[force_exit_all] #13 0x7fd24bfd03e8 (SQLparser+0x908)
-[force_exit_all] #14 0x7fd24bfce94f (SQLengine_+0xebf)
-[force_exit_all] #15 0x7fd24bfcbb03 (SQLengine+0x13)
-[force_exit_all] #16 0x7fd24c8ccfbe (runScenario+0x7e)
-[force_exit_all] #17 0x7fd24c8ce5ab (MSscheduleClient+0xd0b)
-[force_exit_all] #18 0x7fd24caa4316 (doChallenge+0x206)
-[force_exit_all] #19 0x7fd24da9a52b (THRstarter+0x17b)
-[force_exit_all] #20 0x7fd24dd29aa3 (thread_starter+0x63)
-[force_exit_all] #21 0x7fd24bc28609 (start_thread+0xd9)
-[force_exit_all] #22 0x7fd24b9d1133 (clone+0x43)
+[force_exit_all] #0 0x7fef89e47840 (hgeCmp+0x0)
+[force_exit_all] #1 0x7fef899ac946 (BATselect+0x166)
+[force_exit_all] #2 0x7fef89f4dc40 (BATfirstn+0x47a0)
+[force_exit_all] #3 0x7fef89802e02 (ALGfirstn+0x1a2)
+[force_exit_all] #4 0x7fef897284a9 (runMALsequence+0x889)
+[force_exit_all] #5 0x7fef8972bbc4 (DFLOWworker+0x2b4)
+[force_exit_all] #6 0x7fef89e441fb (THRstarter+0xeb)
+[force_exit_all] #7 0x7fef89eb1c67 (thread_starter+0x27)
+[force_exit_all] #8 0x7fef89269609 (start_thread+0xd9)
+[force_exit_all] #9 0x7fef8918e133 (clone+0x43)
 */

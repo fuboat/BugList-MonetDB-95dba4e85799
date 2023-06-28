@@ -1,26 +1,17 @@
-CREATE VIEW v0 AS SELECT CAST ( NULL AS INT ) EXCEPT SELECT CAST ( NULL AS INT ) GROUP BY NULL ; 
+CREATE TABLE v0 ( v1 INT NULL ) ; 
+  INSERT INTO v0 VALUES ( 3 ) , ( 10 ) , ( 1 ) , ( 200 ) , ( 5 ) ; 
+  INSERT INTO v0 SELECT v0 . v1 FROM v0 , v0 AS c3_null , v0 AS a ; 
+  INSERT INTO v0 SELECT v0 . v1 FROM v0 , v0 AS c3_null , v0 AS col2 ; 
+  SELECT v1 , row_number ( ) OVER ( ORDER BY v1 * 3 NULLS LAST , NULL * 0 DESC NULLS FIRST ) , 3 FROM v0 LIMIT 300000 ; 
 /*
-[force_exit_all] #0 0x7f5b7b0961da (exp_subtype+0x1a)
-[force_exit_all] #1 0x7f5b7b0dc188 (rel_set_type+0x538)
-[force_exit_all] #2 0x7f5b7b0bd6a4 (rel_visitor_topdown+0x254)
-[force_exit_all] #3 0x7f5b7b0bd872 (rel_visitor_topdown+0x422)
-[force_exit_all] #4 0x7f5b7b0bd872 (rel_visitor_topdown+0x422)
-[force_exit_all] #5 0x7f5b7b0bd811 (rel_visitor_topdown+0x3c1)
-[force_exit_all] #6 0x7f5b7b0cb53b (rel_unnest+0x1bb)
-[force_exit_all] #7 0x7f5b7b01df30 (sql_processrelation+0x20)
-[force_exit_all] #8 0x7f5b7ad44de4 (create_table_or_view+0x1574)
-[force_exit_all] #9 0x7f5b7adcc2cd (SQLcreate_view+0x2bd)
-[force_exit_all] #10 0x7f5b7b647482 (runMALsequence+0x1252)
-[force_exit_all] #11 0x7f5b7b645cf7 (runMAL+0x107)
-[force_exit_all] #12 0x7f5b7ad84fc3 (SQLrun+0x1a3)
-[force_exit_all] #13 0x7f5b7ad87faf (SQLengineIntern+0x7f)
-[force_exit_all] #14 0x7f5b7ad82015 (SQLengine_+0x1585)
-[force_exit_all] #15 0x7f5b7ad7eb03 (SQLengine+0x13)
-[force_exit_all] #16 0x7f5b7b67ffbe (runScenario+0x7e)
-[force_exit_all] #17 0x7f5b7b6815ab (MSscheduleClient+0xd0b)
-[force_exit_all] #18 0x7f5b7b857316 (doChallenge+0x206)
-[force_exit_all] #19 0x7f5b7c84d52b (THRstarter+0x17b)
-[force_exit_all] #20 0x7f5b7cadcaa3 (thread_starter+0x63)
-[force_exit_all] #21 0x7f5b7a9db609 (start_thread+0xd9)
-[force_exit_all] #22 0x7f5b7a784133 (clone+0x43)
+[force_exit_all] #0 0x7fc601bc8d30 (lngCmp+0x0)
+[force_exit_all] #1 0x7fc60172e946 (BATselect+0x166)
+[force_exit_all] #2 0x7fc601ccfc40 (BATfirstn+0x47a0)
+[force_exit_all] #3 0x7fc601584e02 (ALGfirstn+0x1a2)
+[force_exit_all] #4 0x7fc6014aa4a9 (runMALsequence+0x889)
+[force_exit_all] #5 0x7fc6014adbc4 (DFLOWworker+0x2b4)
+[force_exit_all] #6 0x7fc601bc61fb (THRstarter+0xeb)
+[force_exit_all] #7 0x7fc601c33c67 (thread_starter+0x27)
+[force_exit_all] #8 0x7fc600feb609 (start_thread+0xd9)
+[force_exit_all] #9 0x7fc600f10133 (clone+0x43)
 */

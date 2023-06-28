@@ -1,28 +1,14 @@
-CREATE TABLE v0 ( v1 REAL PRIMARY KEY ) ; 
-  SELECT ( SELECT COUNT ( v1 ) OVER ( ) FROM SUM ( STDDEV_POP ( MIN ( 'x' ) ) ) ) AS v2 FROM v0 WHERE v1 = -1 ; 
+CREATE TABLE v0 ( v1 BIGINT ) ; 
+  INSERT INTO v0 VALUES ( 13 ) , ( 53 ) , ( -1 ) , ( 13 ) , ( 54 ) , ( ( SELECT v1 FROM v0 WHERE v1 IS NULL AND v1 IN ( 7 ^ v1 ) ) ) , ( 72 ) , ( 2147483647 ) ; 
+  WITH v0 AS ( SELECT 2147483647 , * FROM v0 ) INSERT INTO v0 SELECT v1 * -32768 FROM v0 AS v2 , v0 , v0 AS v5 , v0 AS v3 , v0 AS v4 ORDER BY v1 * 127 ^ -1 ; 
+  UPDATE v0 SET v1 = -128 % v1 WHERE ( WITH v0 ( v1 ) AS ( SELECT 8 WHERE ( v1 < -1 OR v1 > 40 ) AND 80 ^ 0 % v1 <= 75 = 127 AND v1 IS NOT NULL ) SELECT VAR_POP ( ( 52 * ( v1 IN ( 127 , 47 ) ) ) ) OVER ( ROWS BETWEEN CURRENT ROW AND v1 - NULL FOLLOWING ) * -32768 ) > v1 ; 
 /*
-[force_exit_all] #0 0x7f3875a6a3de (_rel_aggr+0x8fe)
-[force_exit_all] #1 0x7f3875a625c5 (rel_value_exp2+0xd75)
-[force_exit_all] #2 0x7f3875a512ab (rel_value_exp+0xbb)
-[force_exit_all] #3 0x7f3875a69ec4 (_rel_aggr+0x3e4)
-[force_exit_all] #4 0x7f3875a625c5 (rel_value_exp2+0xd75)
-[force_exit_all] #5 0x7f3875a512ab (rel_value_exp+0xbb)
-[force_exit_all] #6 0x7f3875a4db7a (rel_named_table_function+0x46a)
-[force_exit_all] #7 0x7f3875a67f84 (rel_subquery+0x414)
-[force_exit_all] #8 0x7f3875a637aa (rel_value_exp2+0x1f5a)
-[force_exit_all] #9 0x7f3875a512ab (rel_value_exp+0xbb)
-[force_exit_all] #10 0x7f3875a72667 (rel_select_exp+0x7b7)
-[force_exit_all] #11 0x7f3875a68096 (rel_subquery+0x526)
-[force_exit_all] #12 0x7f3875a684cf (rel_selects+0x2cf)
-[force_exit_all] #13 0x7f387574c6cc (sql_symbol2relation+0x14c)
-[force_exit_all] #14 0x7f387578d3e8 (SQLparser+0x908)
-[force_exit_all] #15 0x7f387578b94f (SQLengine_+0xebf)
-[force_exit_all] #16 0x7f3875788b03 (SQLengine+0x13)
-[force_exit_all] #17 0x7f3876089fbe (runScenario+0x7e)
-[force_exit_all] #18 0x7f387608b5ab (MSscheduleClient+0xd0b)
-[force_exit_all] #19 0x7f3876261316 (doChallenge+0x206)
-[force_exit_all] #20 0x7f387725752b (THRstarter+0x17b)
-[force_exit_all] #21 0x7f38774e6aa3 (thread_starter+0x63)
-[force_exit_all] #22 0x7f38753e5609 (start_thread+0xd9)
-[force_exit_all] #23 0x7f387518e133 (clone+0x43)
+[force_exit_all] #0 0x7f4f049de191 (GDKanalytical_variance_pop+0x7ee1)
+[force_exit_all] #1 0x7f4f03e45435 (do_stddev_and_variance+0x195)
+[force_exit_all] #2 0x7f4f041294a9 (runMALsequence+0x889)
+[force_exit_all] #3 0x7f4f0412cbc4 (DFLOWworker+0x2b4)
+[force_exit_all] #4 0x7f4f048451fb (THRstarter+0xeb)
+[force_exit_all] #5 0x7f4f048b2c67 (thread_starter+0x27)
+[force_exit_all] #6 0x7f4f03c6a609 (start_thread+0xd9)
+[force_exit_all] #7 0x7f4f03b8f133 (clone+0x43)
 */

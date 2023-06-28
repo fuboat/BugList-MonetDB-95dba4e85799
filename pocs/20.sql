@@ -1,21 +1,28 @@
-CREATE TABLE v0 ( v1 BIGINT ) ; 
-  INSERT INTO v0 VALUES ( 16 ) , ( 22 ) , ( -128 ) , ( 60 ) , ( 76 ) , ( 127 ) , ( 89 ) ; 
-  WITH v0 AS ( SELECT -1 , * FROM v0 ) INSERT INTO v0 SELECT v1 * 255 FROM v0 AS v5 , v0 , v0 AS v4 , v0 AS v3 , v0 AS v2 ORDER BY v1 * -128 ^ -1 ; 
-  UPDATE v0 SET v1 = 59 % v1 WHERE ( WITH v0 ( v1 ) AS ( SELECT ( 'x' + 95 ) ORDER BY - ( v1 ) , v1 ) SELECT STDDEV_POP ( v1 ) OVER ( ROWS BETWEEN v1 IS NOT NULL PRECEDING AND 89 FOLLOWING ) IS NOT NULL ) + 0 % v1 % 46 + 45 * v1 ; 
+CREATE TABLE v0 ( v1 REAL PRIMARY KEY ) ; 
+  SELECT ( SELECT COUNT ( v1 ) OVER ( ) FROM SUM ( STDDEV_POP ( MIN ( 'x' ) ) ) ) AS v2 FROM v0 WHERE v1 = -1 ; 
 /*
-[force_exit_all] #0 0x7fc6a51f000b (gsignal+0xcb)
-[force_exit_all] #1 0x7fc6a51cf859 (abort+0x12b)
-[force_exit_all] #2 0x4b6857 (_ZN11__sanitizer5AbortEv+0x47)
-[force_exit_all] #3 0x4b4d81 (_ZN11__sanitizer3DieEv+0xc1)
-[force_exit_all] #4 0x49c2c4 (_ZN6__asan19ScopedInErrorReportD2Ev+0x1c4)
-[force_exit_all] #5 0x49de8a (_ZN6__asan18ReportGenericErrorEmmmmbmjb+0x5ba)
-[force_exit_all] #6 0x49e728 (__asan_report_load8+0x28)
-[force_exit_all] #7 0x7fc6a78c5e86 (GDKanalytical_stddev_pop+0xdcc6)
-[force_exit_all] #8 0x7fc6a5a2eb87 (do_stddev_and_variance+0x3e7)
-[force_exit_all] #9 0x7fc6a618f482 (runMALsequence+0x1252)
-[force_exit_all] #10 0x7fc6a619aa0a (DFLOWworker+0x63a)
-[force_exit_all] #11 0x7fc6a739552b (THRstarter+0x17b)
-[force_exit_all] #12 0x7fc6a7624aa3 (thread_starter+0x63)
-[force_exit_all] #13 0x7fc6a5523609 (start_thread+0xd9)
-[force_exit_all] #14 0x7fc6a52cc133 (clone+0x43)
+[force_exit_all] #0 0x7f20e4081e0c (_rel_aggr+0x44c)
+[force_exit_all] #1 0x7f20e407eb0c (rel_value_exp2+0x7cc)
+[force_exit_all] #2 0x7f20e4078257 (rel_value_exp+0x77)
+[force_exit_all] #3 0x7f20e4081b1d (_rel_aggr+0x15d)
+[force_exit_all] #4 0x7f20e407eb0c (rel_value_exp2+0x7cc)
+[force_exit_all] #5 0x7f20e4078257 (rel_value_exp+0x77)
+[force_exit_all] #6 0x7f20e40769dc (rel_named_table_function+0x1ac)
+[force_exit_all] #7 0x7f20e4080f1d (rel_subquery+0x25d)
+[force_exit_all] #8 0x7f20e407f0a0 (rel_value_exp2+0xd60)
+[force_exit_all] #9 0x7f20e4078257 (rel_value_exp+0x77)
+[force_exit_all] #10 0x7f20e40855d7 (rel_select_exp+0x307)
+[force_exit_all] #11 0x7f20e4080fc0 (rel_subquery+0x300)
+[force_exit_all] #12 0x7f20e40810ed (rel_selects+0xbd)
+[force_exit_all] #13 0x7f20e3f64b3f (sql_symbol2relation+0x5f)
+[force_exit_all] #14 0x7f20e3f7cb44 (SQLparser+0x354)
+[force_exit_all] #15 0x7f20e3f7c2e7 (SQLengine_+0x567)
+[force_exit_all] #16 0x7f20e3f7afa1 (SQLengine+0x11)
+[force_exit_all] #17 0x7f20e42efe2f (runScenario+0x3f)
+[force_exit_all] #18 0x7f20e42f0854 (MSscheduleClient+0x6a4)
+[force_exit_all] #19 0x7f20e438e51d (doChallenge+0xed)
+[force_exit_all] #20 0x7f20e49f91fb (THRstarter+0xeb)
+[force_exit_all] #21 0x7f20e4a66c67 (thread_starter+0x27)
+[force_exit_all] #22 0x7f20e3e1e609 (start_thread+0xd9)
+[force_exit_all] #23 0x7f20e3d43133 (clone+0x43)
 */
