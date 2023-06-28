@@ -9,8 +9,12 @@ The are 40 crashes found in MonetDB (node 95dba4e85799). The SQL statements to t
  - Self-installed and compiled. The full command line of compilation is as follow:
 ```
 wget https://www.monetdb.org/hg/MonetDB/archive/default.zip
-
- `CC=clang-12 CXX=clang++-12 cmake /root/monetdb_default -DCMAKE_BUILD_TYPE=RelWithDebInfo`
+unzip ./default.zip
+cd MonetDB-default/
+mkdir build
+cd build
+CC=clang-12 CXX=clang++-12 cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
+make install -j20
 ```
 
 **How to reproduce**
