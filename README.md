@@ -7,7 +7,7 @@ The are 40 crashes found in MonetDB (node 95dba4e85799). The SQL statements to t
  - MonetDB client version: version 11.48.0 (hg id: 95dba4e85799 88693) 
  - OS and version: ubuntu 20.04
  - Self-installed and compiled. The full command line of compilation is as follow:
-```
+```bash
 wget https://www.monetdb.org/hg/MonetDB/archive/default.zip
 unzip ./default.zip
 cd MonetDB-default/
