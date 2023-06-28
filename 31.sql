@@ -1,0 +1,25 @@
+CREATE TABLE v0 ( v2 DOUBLE PRIMARY KEY , v1 VARCHAR(1) ) ;
+ DELETE FROM v0 WHERE ( SELECT v2 FROM v0 WHERE v0 . v2 = v0 . v1 GROUP BY 2.100000 , v1 ) IN ( 10.100000 , 10 , 10 ) ;
+/*
+[force_exit_all] #0 0x7f177092e4f4 (bin_find_smallest_column+0x64)
+[force_exit_all] #1 0x7f1770910c0d (subrel_bin+0x3ed)
+[force_exit_all] #2 0x7f177091f1b1 (rel2bin_project+0x3f1)
+[force_exit_all] #3 0x7f177091177e (subrel_bin+0xf5e)
+[force_exit_all] #4 0x7f1770912617 (subrel_bin+0x1df7)
+[force_exit_all] #5 0x7f177091f1b1 (rel2bin_project+0x3f1)
+[force_exit_all] #6 0x7f177091177e (subrel_bin+0xf5e)
+[force_exit_all] #7 0x7f17709243f7 (rel2bin_delete+0xb7)
+[force_exit_all] #8 0x7f1770912630 (subrel_bin+0x1e10)
+[force_exit_all] #9 0x7f1770910647 (output_rel_bin+0x117)
+[force_exit_all] #10 0x7f177097f88d (backend_dumpstmt+0x39d)
+[force_exit_all] #11 0x7f17708faa98 (SQLparser+0xfb8)
+[force_exit_all] #12 0x7f17708f894f (SQLengine_+0xebf)
+[force_exit_all] #13 0x7f17708f5b03 (SQLengine+0x13)
+[force_exit_all] #14 0x7f17711f6fbe (runScenario+0x7e)
+[force_exit_all] #15 0x7f17711f85ab (MSscheduleClient+0xd0b)
+[force_exit_all] #16 0x7f17713ce316 (doChallenge+0x206)
+[force_exit_all] #17 0x7f17723c452b (THRstarter+0x17b)
+[force_exit_all] #18 0x7f1772653aa3 (thread_starter+0x63)
+[force_exit_all] #19 0x7f1770552609 (start_thread+0xd9)
+[force_exit_all] #20 0x7f17702fb133 (clone+0x43)
+*/

@@ -1,0 +1,25 @@
+CREATE TABLE v0 ( v1 DOUBLE , v5 DOUBLE , v3 INT , v6 DOUBLE , v2 INT , v4 INTEGER ) ;
+ UPDATE v0 SET v2 = ( SELECT NULL WHERE v5 = v3 GROUP BY v1 , v2 ) WHERE v2 > 10 ;
+/*
+[force_exit_all] #0 0x7f3d9374c294 (sql_ifthenelse_propagate_statistics+0x84)
+[force_exit_all] #1 0x7f3d9373e0d7 (rel_propagate_statistics+0xaf7)
+[force_exit_all] #2 0x7f3d936fd8e3 (exp_visitor+0x1273)
+[force_exit_all] #3 0x7f3d936fbc9f (exps_exp_visitor_bottomup+0x18f)
+[force_exit_all] #4 0x7f3d93736fcb (rel_get_statistics_+0x21b)
+[force_exit_all] #5 0x7f3d936fb21d (rel_visitor_bottomup+0x3bd)
+[force_exit_all] #6 0x7f3d936fb05b (rel_visitor_bottomup+0x1fb)
+[force_exit_all] #7 0x7f3d936faff5 (rel_visitor_bottomup+0x195)
+[force_exit_all] #8 0x7f3d93736bf0 (rel_get_statistics+0x110)
+[force_exit_all] #9 0x7f3d93730632 (rel_optimizer+0xe72)
+[force_exit_all] #10 0x7f3d9337f854 (sql_symbol2relation+0x2d4)
+[force_exit_all] #11 0x7f3d933c03e8 (SQLparser+0x908)
+[force_exit_all] #12 0x7f3d933be94f (SQLengine_+0xebf)
+[force_exit_all] #13 0x7f3d933bbb03 (SQLengine+0x13)
+[force_exit_all] #14 0x7f3d93cbcfbe (runScenario+0x7e)
+[force_exit_all] #15 0x7f3d93cbe5ab (MSscheduleClient+0xd0b)
+[force_exit_all] #16 0x7f3d93e94316 (doChallenge+0x206)
+[force_exit_all] #17 0x7f3d94e8a52b (THRstarter+0x17b)
+[force_exit_all] #18 0x7f3d95119aa3 (thread_starter+0x63)
+[force_exit_all] #19 0x7f3d93018609 (start_thread+0xd9)
+[force_exit_all] #20 0x7f3d92dc1133 (clone+0x43)
+*/

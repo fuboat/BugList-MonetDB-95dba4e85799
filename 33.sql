@@ -1,0 +1,26 @@
+CREATE TABLE v0 ( v1 REAL ) ;
+ SELECT CAST ( max ( ( SELECT NULL AS v2 GROUP BY v1 ) ) AS INTEGER ) FROM v0 UNION SELECT 3 ;
+/*
+[force_exit_all] #0 0x7f8a34d20a0d (sql_min_max_propagate_statistics+0x7d)
+[force_exit_all] #1 0x7f8a34d0d0d7 (rel_propagate_statistics+0xaf7)
+[force_exit_all] #2 0x7f8a34ccc8e3 (exp_visitor+0x1273)
+[force_exit_all] #3 0x7f8a34ccac9f (exps_exp_visitor_bottomup+0x18f)
+[force_exit_all] #4 0x7f8a34d05fcb (rel_get_statistics_+0x21b)
+[force_exit_all] #5 0x7f8a34cca21d (rel_visitor_bottomup+0x3bd)
+[force_exit_all] #6 0x7f8a34cca05b (rel_visitor_bottomup+0x1fb)
+[force_exit_all] #7 0x7f8a34cca05b (rel_visitor_bottomup+0x1fb)
+[force_exit_all] #8 0x7f8a34cc9fa8 (rel_visitor_bottomup+0x148)
+[force_exit_all] #9 0x7f8a34d05bf0 (rel_get_statistics+0x110)
+[force_exit_all] #10 0x7f8a34cff632 (rel_optimizer+0xe72)
+[force_exit_all] #11 0x7f8a3494e854 (sql_symbol2relation+0x2d4)
+[force_exit_all] #12 0x7f8a3498f3e8 (SQLparser+0x908)
+[force_exit_all] #13 0x7f8a3498d94f (SQLengine_+0xebf)
+[force_exit_all] #14 0x7f8a3498ab03 (SQLengine+0x13)
+[force_exit_all] #15 0x7f8a3528bfbe (runScenario+0x7e)
+[force_exit_all] #16 0x7f8a3528d5ab (MSscheduleClient+0xd0b)
+[force_exit_all] #17 0x7f8a35463316 (doChallenge+0x206)
+[force_exit_all] #18 0x7f8a3645952b (THRstarter+0x17b)
+[force_exit_all] #19 0x7f8a366e8aa3 (thread_starter+0x63)
+[force_exit_all] #20 0x7f8a345e7609 (start_thread+0xd9)
+[force_exit_all] #21 0x7f8a34390133 (clone+0x43)
+*/

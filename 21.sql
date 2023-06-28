@@ -1,0 +1,28 @@
+CREATE TABLE v0 ( v1 REAL PRIMARY KEY ) ; 
+  SELECT ( SELECT COUNT ( v1 ) OVER ( ) FROM SUM ( STDDEV_POP ( MIN ( 'x' ) ) ) ) AS v2 FROM v0 WHERE v1 = -1 ; 
+/*
+[force_exit_all] #0 0x7f3875a6a3de (_rel_aggr+0x8fe)
+[force_exit_all] #1 0x7f3875a625c5 (rel_value_exp2+0xd75)
+[force_exit_all] #2 0x7f3875a512ab (rel_value_exp+0xbb)
+[force_exit_all] #3 0x7f3875a69ec4 (_rel_aggr+0x3e4)
+[force_exit_all] #4 0x7f3875a625c5 (rel_value_exp2+0xd75)
+[force_exit_all] #5 0x7f3875a512ab (rel_value_exp+0xbb)
+[force_exit_all] #6 0x7f3875a4db7a (rel_named_table_function+0x46a)
+[force_exit_all] #7 0x7f3875a67f84 (rel_subquery+0x414)
+[force_exit_all] #8 0x7f3875a637aa (rel_value_exp2+0x1f5a)
+[force_exit_all] #9 0x7f3875a512ab (rel_value_exp+0xbb)
+[force_exit_all] #10 0x7f3875a72667 (rel_select_exp+0x7b7)
+[force_exit_all] #11 0x7f3875a68096 (rel_subquery+0x526)
+[force_exit_all] #12 0x7f3875a684cf (rel_selects+0x2cf)
+[force_exit_all] #13 0x7f387574c6cc (sql_symbol2relation+0x14c)
+[force_exit_all] #14 0x7f387578d3e8 (SQLparser+0x908)
+[force_exit_all] #15 0x7f387578b94f (SQLengine_+0xebf)
+[force_exit_all] #16 0x7f3875788b03 (SQLengine+0x13)
+[force_exit_all] #17 0x7f3876089fbe (runScenario+0x7e)
+[force_exit_all] #18 0x7f387608b5ab (MSscheduleClient+0xd0b)
+[force_exit_all] #19 0x7f3876261316 (doChallenge+0x206)
+[force_exit_all] #20 0x7f387725752b (THRstarter+0x17b)
+[force_exit_all] #21 0x7f38774e6aa3 (thread_starter+0x63)
+[force_exit_all] #22 0x7f38753e5609 (start_thread+0xd9)
+[force_exit_all] #23 0x7f387518e133 (clone+0x43)
+*/

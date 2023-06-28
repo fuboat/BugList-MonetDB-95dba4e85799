@@ -1,0 +1,26 @@
+CREATE TABLE v0 ( v1 INT PRIMARY KEY ) ; 
+  SELECT DISTINCT ( SELECT v1 WHERE ( 5 ) ) >= ANY ( 9223372036854775807 ) FROM v0 ; 
+/*
+[force_exit_all] #0 0x7f8862bb03e5 (get_rel_count+0x15)
+[force_exit_all] #1 0x7f8862ad876b (rel_propagate_statistics+0x18b)
+[force_exit_all] #2 0x7f8862a988e3 (exp_visitor+0x1273)
+[force_exit_all] #3 0x7f8862a96c9f (exps_exp_visitor_bottomup+0x18f)
+[force_exit_all] #4 0x7f8862ad1fcb (rel_get_statistics_+0x21b)
+[force_exit_all] #5 0x7f8862a9621d (rel_visitor_bottomup+0x3bd)
+[force_exit_all] #6 0x7f8862a95ff5 (rel_visitor_bottomup+0x195)
+[force_exit_all] #7 0x7f8862a9605b (rel_visitor_bottomup+0x1fb)
+[force_exit_all] #8 0x7f8862a9605b (rel_visitor_bottomup+0x1fb)
+[force_exit_all] #9 0x7f8862ad1bf0 (rel_get_statistics+0x110)
+[force_exit_all] #10 0x7f8862acb632 (rel_optimizer+0xe72)
+[force_exit_all] #11 0x7f886271a854 (sql_symbol2relation+0x2d4)
+[force_exit_all] #12 0x7f886275b3e8 (SQLparser+0x908)
+[force_exit_all] #13 0x7f886275994f (SQLengine_+0xebf)
+[force_exit_all] #14 0x7f8862756b03 (SQLengine+0x13)
+[force_exit_all] #15 0x7f8863057fbe (runScenario+0x7e)
+[force_exit_all] #16 0x7f88630595ab (MSscheduleClient+0xd0b)
+[force_exit_all] #17 0x7f886322f316 (doChallenge+0x206)
+[force_exit_all] #18 0x7f886422552b (THRstarter+0x17b)
+[force_exit_all] #19 0x7f88644b4aa3 (thread_starter+0x63)
+[force_exit_all] #20 0x7f88623b3609 (start_thread+0xd9)
+[force_exit_all] #21 0x7f886215c133 (clone+0x43)
+*/
